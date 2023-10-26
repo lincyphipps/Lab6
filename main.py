@@ -10,6 +10,21 @@ def menu():
     print("Menu \n-------------")
     print("1. Encode\n2. Decode\n3. Quit\n")
 
+
+''' Hiral Shukla '''
+
+encoded_text = encoder(user_password)
+
+
+def decoder(encoded_text):
+    original = ""
+    for i in range(0, len(encoded_text)):
+        original += str((int(password[i]) + 7) % 10)
+
+    return orignal
+
+
+
 if __name__ == "__main__":
     run = True
 
@@ -23,7 +38,9 @@ while run:
 
     if user_select == 2:
         print(f"The encoded password is {encoder(user_password)}", end='')
-        print(f", and the original password is {user_password}.\n")
+        print(f", and the original password is {decoder(encoder(user_password))}.\n")
 
     if user_select == 3:
         break
+
+
